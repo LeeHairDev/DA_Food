@@ -13,11 +13,14 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
-import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DetailBlogComponent } from './pages/detail-blog/detail-blog.component';
 import { PayComponent } from './pages/pay/pay.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ListBlogComponent } from './pages/list-blog/list-blog.component';
+import { ListProductsComponent } from './pages/list-products/list-products.component';
+import { ClientComponent } from './layout/client/client.component';
+import { DangnhapComponent } from './pages/dangnhap/dangnhap.component';
 
 
 @NgModule({
@@ -32,11 +35,14 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ContactComponent,
     CartComponent,
     DetailProductComponent,
-    LoginComponent,
     RegisterComponent,
     DetailBlogComponent,
     PayComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ListBlogComponent,
+    ListProductsComponent,
+    ClientComponent,
+    DangnhapComponent
   ],
   imports: [
     BrowserModule,
