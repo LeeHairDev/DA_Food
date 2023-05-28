@@ -21,6 +21,16 @@ import { ListBlogComponent } from './pages/list-blog/list-blog.component';
 import { ListProductsComponent } from './pages/list-products/list-products.component';
 import { ClientComponent } from './layout/client/client.component';
 import { DangnhapComponent } from './pages/dangnhap/dangnhap.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { UsersComponent } from './pages/admin/users/users.component';
+import { AddProductComponent } from './pages/admin/product/add-product/add-product.component';
+import { ProductsComponent } from './pages/admin/product/products/products.component';
+import { UpdateProductComponent } from './pages/admin/product/update-product/update-product.component';
+import { CategoriesComponent } from './pages/admin/category/categories/categories.component';
+import { CommentsComponent } from './pages/admin/comments/comments.component';
+import { AddCategoryComponent } from './pages/admin/category/add-category/add-category.component';
+import { UpdateCategoryComponent } from './pages/admin/category/update-category/update-category.component';
 
 
 @NgModule({
@@ -42,7 +52,17 @@ import { DangnhapComponent } from './pages/dangnhap/dangnhap.component';
     ListBlogComponent,
     ListProductsComponent,
     ClientComponent,
-    DangnhapComponent
+    DangnhapComponent,
+    AdminComponent,
+    DashboardComponent,
+    CategoriesComponent,
+    ProductsComponent,
+    CommentsComponent,
+    UsersComponent,
+    AddProductComponent,
+    UpdateProductComponent,
+    AddCategoryComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,
