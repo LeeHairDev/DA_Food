@@ -18,6 +18,16 @@ import { ListBlogComponent } from './pages/list-blog/list-blog.component';
 import { ListProductsComponent } from './pages/list-products/list-products.component';
 import { ClientComponent } from './layout/client/client.component';
 import { DangnhapComponent } from './pages/dangnhap/dangnhap.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { ProductsComponent } from './pages/admin/product/products/products.component';
+import { CategoriesComponent } from './pages/admin/category/categories/categories.component';
+import { UsersComponent } from './pages/admin/users/users.component';
+import { CommentsComponent } from './pages/admin/comments/comments.component';
+import { AddProductComponent } from './pages/admin/product/add-product/add-product.component';
+import { UpdateProductComponent } from './pages/admin/product/update-product/update-product.component';
+import { AddCategoryComponent } from './pages/admin/category/add-category/add-category.component';
+import { UpdateCategoryComponent } from './pages/admin/category/update-category/update-category.component';
 
 const routes : Routes = [
   {
@@ -31,7 +41,8 @@ const routes : Routes = [
     children: [{
       path: 'home', component: HomeComponent,
      
-    },{
+    },
+    {
       path : 'about',
       component: AboutComponent
   },
@@ -79,6 +90,26 @@ const routes : Routes = [
     
   ]
     
+},{
+  path: 'admin',
+  component: AdminComponent,
+  children:[
+    {path:'', component: DashboardComponent},
+    {path: 'products',component: ProductsComponent},
+    {path: 'products/add',component: AddProductComponent},
+    {path: 'products/:id/update',component: UpdateProductComponent},
+    {path: 'categories',component: CategoriesComponent},
+    {path: 'categories/add',component: AddCategoryComponent},
+    {path: 'categories/:id/update',component: UpdateCategoryComponent},
+    {path: 'user',component: UsersComponent},
+    {path: 'cmt',component:CommentsComponent},
+    {path: 'cart',component: CartComponent},
+    {
+      path : '',
+      redirectTo : '/admin',
+      pathMatch : 'full'
+  },
+]
 },
 {path: '**', component: NotFoundComponent}
 
