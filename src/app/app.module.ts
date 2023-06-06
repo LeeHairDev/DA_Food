@@ -31,6 +31,8 @@ import { CategoriesComponent } from './pages/admin/category/categories/categorie
 import { CommentsComponent } from './pages/admin/comments/comments.component';
 import { AddCategoryComponent } from './pages/admin/category/add-category/add-category.component';
 import { UpdateCategoryComponent } from './pages/admin/category/update-category/update-category.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -67,7 +69,8 @@ import { UpdateCategoryComponent } from './pages/admin/category/update-category/
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
