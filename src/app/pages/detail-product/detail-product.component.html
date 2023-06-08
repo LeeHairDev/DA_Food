@@ -46,7 +46,7 @@
 			============================================= -->
 			<section id="product-1" class="pt-100 single-product division">
 				<div class="container">
-					<div class="row">
+					<div class="row" *ngIf="product">
 
 
 						<!-- PRODUCT IMAGE -->
@@ -114,7 +114,7 @@
 								<div class="project-title">
 
 									<!-- Title -->
-									<h2 class="h2-lg">Smokey House</h2>
+									<h2 class="h2-lg">{{product.name}}</h2>
 
 									<!-- Rating -->
 									<div class="stars-rating">
@@ -181,7 +181,7 @@
 			============================================= -->
 			<section id="product-1-data" class="wide-80 single-product-data division">
 				<div class="container">
-					<div class="row">
+					<div class="row" *ngIf="product">
 						<div class="col-md-12">
 							<div class="">
 
