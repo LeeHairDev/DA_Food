@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IProduct } from 'src/app/interface/IProduct';
-import { CartService } from 'src/app/service/cart/cart.service';
+import { CartService } from '../../service/cart/cart.service';
 import { ProductsService } from 'src/app/service/products/products.service';
 
 @Component({
@@ -22,8 +22,7 @@ export class ListProductsComponent {
 
   addToCart(item: any): void {
     this.cartService.addToCart(item);
-    console.log(this.cartService);
-
+    // console.log(this.cartService);
   }
   page: number = 1;
   count: number = 0;

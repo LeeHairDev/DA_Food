@@ -2,19 +2,42 @@
 <div class="container-login">
   <div class="main">
       <div class="container a-container" id="a-container">
-          <form class="form" id="a-form" method="" action="">
-              <h2 class="form_title title">Tạo Tài Khoản</h2>
-              <div class="form__icons">
-                <i class='bx bxl-facebook'></i>
-                <i class='bx bxl-google' ></i>
-                      
-              </div>
-              <span class="form__span">Sử dụng tài khoản google hoặc phết búc</span>
-              <input class="form__input" type="text" placeholder="Name">
-              <input class="form__input" type="text" placeholder="Email">
-              <input class="form__input" type="password" placeholder="Password">
-              <button class="form__button button submit">ĐĂNG KÝ</button>
-          </form>
+        <form
+        [formGroup]="userForm"
+        (ngSubmit)="onHandleSubmit()"
+        class="form"
+        id="a-form"
+        method=""
+        action=""
+      >
+        <h2 class="form_title title">Create Account</h2>
+        <div class="form__icons">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-google"></i>
+        </div>
+        <span class="form__span">Sử dụng tài khoản google hoặc phết búc</span>
+        <input
+          class="form__input"
+          type="text"
+          formControlName="name"
+          placeholder="Name"
+        />
+        <input
+          class="form__input"
+          type="text"
+          formControlName="email"
+          placeholder="Email"
+        />
+        <input
+          class="form__input"
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <button class="form__button button submit" type="submit">
+          ĐĂNG KÝ
+        </button>
+      </form>
       </div>
       
       <div class="switch" id="switch-cnt">

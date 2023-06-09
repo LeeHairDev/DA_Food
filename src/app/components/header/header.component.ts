@@ -16,7 +16,6 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.categoriesService.getCate().subscribe(
       (data) => {       
-        console.log(data);
         this.categories = data;
       },
       (error) => console.log(error)
