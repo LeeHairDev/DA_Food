@@ -3,5 +3,6 @@ export interface IProduct{
     name: string;
     price: number;
     description?: string;
+    categories?: string;
     __v?:number;
 }

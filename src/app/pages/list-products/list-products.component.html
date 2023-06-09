@@ -21,7 +21,7 @@
 											<div class="breadcrumb-nav">
 												<nav aria-label="breadcrumb">
 												  	<ol class="breadcrumb">
-												    	<li class="breadcrumb-item "><a href="demo-1.html">Home</a></li>
+												    	<li class="breadcrumb-item"><a href="demo-1.html">Home</a></li>
 												    	<li class="breadcrumb-item active" aria-current="page">Menu</li>
 												  	</ol>
 												</nav>
@@ -99,16 +99,15 @@
 									</div>
 
 									<!-- Title -->
-									<h5 class="h5-sm"> 
-										<a [routerLink]="['/products', item.id]">{{item.name}}</a>
-									  </h5>
+									<h5 class="h5-sm"> <a [routerLink]="['/products', item.id]">{{item.name | slice:0:20}}</a></h5>
 
 									<!-- Description -->	
-									<p class="grey-color">{{item.description}}</p>
+									<p class="grey-color">{{item.description | slice:0:35}}...</p>
+
 
 									<!-- Price -->
 									<div class="menu-6-price bg-coffee">
-										<h5 class="h5-xs yellow-color">{{item.price}}</h5>
+										<h5 class="h5-xs yellow-color">{{ item.price | currency:'VND':'symbol':'1.0-0' }}</h5>
 									</div>
 
 									<!-- Add To Cart -->

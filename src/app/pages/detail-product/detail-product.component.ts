@@ -13,6 +13,12 @@ export class DetailProductComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.productService.getData(id).subscribe(product => this.product = product);
+    this.productService.getData(id).subscribe(product => {
+      this.product = product 
+    });
+    
+  }
+  getCategoryNames() {
+    return this.product.categories.map((category: any) => category.name).join(', ');
   }
 }

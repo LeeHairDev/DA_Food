@@ -13,7 +13,6 @@ export class ListProductsComponent {
   ngOnInit() : void{
        this.productService.getDatas().subscribe((data)=>{       
          this.products = data;
-         console.log(data);
          
        }, error => console.log(error.message)
       )
@@ -21,7 +20,7 @@ export class ListProductsComponent {
   }
   page: number = 1;
   count: number = 0;
-  tableSize: number = 4;
+  tableSize: number = 16;
   tableSizes: any = [3, 6, 9, 12];
 
   onTableDataChange(event: any) {
