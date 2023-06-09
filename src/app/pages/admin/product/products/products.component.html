@@ -1,81 +1,127 @@
 <div class="app-content pt-3 p-md-3 p-lg-4">
-    <div class="container-xl">
-        
-        <div class="row g-3 mb-4 align-items-center justify-content-between">
+  <div class="container-xl">
+    <div class="row g-3 mb-4 align-items-center justify-content-between">
+      <div class="col-auto">
+        <h1 class="app-page-title mb-0">Categories list</h1>
+      </div>
+      <div class="col-auto">
+        <div class="page-utilities">
+          <div
+            class="row g-2 justify-content-start justify-content-md-end align-items-center"
+          >
             <div class="col-auto">
-                <h1 class="app-page-title mb-0">Categories list</h1>
+              <form class="table-search-form row gx-1 align-items-center">
+                <div class="col-auto">
+                  <input
+                    type="text"
+                    id="search-orders"
+                    name="searchorders"
+                    class="form-control search-orders"
+                    placeholder="Search"
+                  />
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn app-btn-secondary">
+                    Search
+                  </button>
+                </div>
+              </form>
             </div>
-            <div class="col-auto">
-                 <div class="page-utilities">
-                    <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
-                        <div class="col-auto">
-                            <form class="table-search-form row gx-1 align-items-center">
-                                <div class="col-auto">
-                                    <input type="text" id="search-orders" name="searchorders" class="form-control search-orders" placeholder="Search">
-                                </div>
-                                <div class="col-auto">
-                                    <button type="submit" class="btn app-btn-secondary">Search</button>
-                                </div>
-                            </form>
-                            
-                        </div><!--//col-->
-                        
-                    </div><!--//row-->
-                </div><!--//table-utilities-->
-            </div><!--//col-auto-->
-        </div><!--//row-->
-          
-        <div class="tab-content-cate" id="orders-table-tab-content">
-            <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
-                <div class="app-card app-card-orders-table shadow-sm mb-5">
-                    <div class="app-card-body">
-                        <div class="table-responsive">
-                            <table class="table app-table-hover mb-0 text-left">
-                                <thead>
-                                    <tr>
-                                        <th class="cell">ID</th>
-                                        <th class="cell">Product</th>
-                                        <th class="cell">Image</th>
-                                        <th class="cell">description</th>
-                                        <th class="cell">Price</th>
-                                        <th class="cell">size</th>
-                                        <th class="cell">calo</th>
-                                        <th class="cell">Category</th>
-                                        <th class="cell"></th>
-                                    </tr>
-                                </thead>
-                                <tbody  *ngFor="let product of products">
-                                    <tr>
-                                        <td class="cell">{{product.id}} </td>
-                                        <td class="cell"><span class="truncate">{{product.name}}</span></td>
-                                        <td class="cell"><img [src]="product.image"></td>
-                                        <td class="cell">{{product.description}}</td>
-                                        <td class="cell">{{product.price}}</td>
-                                        <td class="cell">{{product.size}}</td>
-                                        <td class="cell">{{product.calo}}</td>
-                                        <td class="cell">{{product.idCategory}}</td>
-                                        <td class="cell">
-                                            <input type="button" class="btn btn-danger text-light mx-1" value="Xóa"  (click)="removeItem(product.id)"  >
-                                           <a routerLink="/admin/products/{{product.id}}/update">Cập nhật</a> 
+            <!--//col-->
+          </div>
+          <!--//row-->
+        </div>
+        <!--//table-utilities-->
+      </div>
+      <!--//col-auto-->
+    </div>
+    <!--//row-->
 
-                                        </td>
-                                    </tr>
-                                    
-
-                                </tbody>
-                            </table>
-                        </div><!--//table-responsive-->
-                       
-                    </div><!--//app-card-body-->		
-                </div><!--//app-card-->
-                
-                
-            </div><!--//tab-pane-->
-            
-            
-        </div><!--//tab-content-->
-        
-        
-        
-    </div><!--//container-fluid-->
-</div><!--//app-content-->
+    <div class="tab-content-cate" id="orders-table-tab-content">
+      <div
+        class="tab-pane fade show active"
+        id="orders-all"
+        role="tabpanel"
+        aria-labelledby="orders-all-tab"
+      >
+        <div class="app-card app-card-orders-table shadow-sm mb-5">
+          <div class="app-card-body">
+            <div class="table-responsive">
+              <table class="table app-table-hover mb-0 text-left">
+                <thead>
+                  <tr>
+                    <th class="cell">ID</th>
+                    <th class="cell">Product</th>
+                    <th class="cell">Image</th>
+                    <th class="cell">description</th>
+                    <th class="cell">Price</th>
+                    <th class="cell">size</th>
+                    <th class="cell">calo</th>
+                    <th class="cell">Category</th>
+                    <th class="cell"></th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let product of products">
+                  <tr>
+                    <td class="cell">{{ product.id }}</td>
+                    <td class="cell">
+                      <span class="truncate">{{ product.name }}</span>
+                    </td>
+                    <td class="cell">
+                      <img
+                        style="width: 100px; height: 100px; border-radius: 15px"
+                        [src]="product.image"
+                      />
+                    </td>
+                    <td class="cell">{{ product.description }}</td>
+                    <td class="cell">{{ product.price }}</td>
+                    <td class="cell">{{ product.size }}</td>
+                    <td class="cell">{{ product.calo }}</td>
+                    <td class="cell">{{ product.categories.name }}</td>
+                    <td
+                      class="cell"
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 10px;
+                      "
+                    >
+                      <input
+                        type="button"
+                        class="btn btn-danger text-light mx-1"
+                        value="Xóa"
+                        (click)="removeItem(product.id)"
+                      />
+                      <a
+                        style="
+                          padding: 10px;
+                          background-color: blue;
+                          border-radius: 5px;
+                          color: white;
+                          width: 61px;
+                          text-align: center;
+                          font-weight: bold;
+                        "
+                        routerLink="/admin/products/{{ product.id }}/update"
+                        >Edit</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!--//table-responsive-->
+          </div>
+          <!--//app-card-body-->
+        </div>
+        <!--//app-card-->
+      </div>
+      <!--//tab-pane-->
+    </div>
+    <!--//tab-content-->
+  </div>
+  <!--//container-fluid-->
+</div>
+<!--//app-content-->

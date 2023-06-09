@@ -8,7 +8,7 @@ import { AIproduct } from 'src/app/interface/AProduct';
 @Component({
   selector: 'app-update-product',
   templateUrl: './update-product.component.html',
-  styleUrls: ['./update-product.component.css']
+  styleUrls: ['./update-product.component.css'],
 })
 export class UpdateProductComponent implements OnInit {
   product: AIproduct = {
@@ -18,7 +18,7 @@ export class UpdateProductComponent implements OnInit {
     price: 0,
     size: '',
     calo: '',
-    idCategory: ''
+    categories: '',
   };
   productForm: FormGroup;
 
@@ -34,14 +34,14 @@ export class UpdateProductComponent implements OnInit {
       price: [0],
       size: [''],
       calo: [''],
-      idCategory: ['']
+      idCategory: [''],
     });
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(param => {
+    this.route.paramMap.subscribe((param) => {
       const id = String(param.get('id'));
-      this.productService.getCategories(id).subscribe(product => {
+      this.productService.getCategories(id).subscribe((product) => {
         this.product = product;
         this.productForm.patchValue({
           name: product.name,
@@ -50,7 +50,7 @@ export class UpdateProductComponent implements OnInit {
           price: product.price,
           size: product.size,
           calo: product.calo,
-          idCategory: product.idCategory
+          idCategory: product.categories,
         });
       });
     });
@@ -69,10 +69,10 @@ export class UpdateProductComponent implements OnInit {
       price: this.productForm.value.price || 0,
       size: this.productForm.value.size || '',
       calo: this.productForm.value.calo || '',
-      idCategory: this.productForm.value.idCategory || ''
+      categories: this.productForm.value.idCategory || '',
     };
 
-    this.productService.updateProduct(updatedProduct).subscribe(data => {
+    this.productService.updateProduct(updatedProduct).subscribe((data) => {
       alert('Product updated successfully!');
     });
   }
