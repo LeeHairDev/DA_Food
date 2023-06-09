@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IProduct } from 'src/app/interface/IProduct';
+import { CartService } from '../../service/cart/cart.service';
 import { ProductsService } from 'src/app/service/products/products.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductsService } from 'src/app/service/products/products.service';
 })
 export class ListProductsComponent {
   products: IProduct[] = [];
-    constructor(private productService: ProductsService){}
+    constructor(private productService: ProductsService, private cartService: CartService){}
   ngOnInit() : void{
        this.productService.getDatas().subscribe((data)=>{       
          this.products = data;
@@ -17,6 +18,11 @@ export class ListProductsComponent {
        }, error => console.log(error.message)
       )
      
+  }
+
+  addToCart(item: any): void {
+    this.cartService.addToCart(item);
+    // console.log(this.cartService);
   }
   page: number = 1;
   count: number = 0;
@@ -31,6 +37,11 @@ export class ListProductsComponent {
     this.tableSize = event.target.value;
     this.page = 1;
     this.products;
+  }
+
+  log(value: any){
+    console.log(value);
+    
   }
 }
 

@@ -36,7 +36,6 @@ import { CartsAdminComponent } from './pages/admin/carts-admin/carts-admin.compo
 import { OrdersComponent } from './pages/admin/orders/orders.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
