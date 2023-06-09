@@ -51,11 +51,13 @@ const routes : Routes = [
     component: ShopComponent,
     children: [
       {path: '', component: ListProductsComponent},
-      {
-       path: ':id', component: DetailProductComponent
-      }
+     
     ]
   },
+  {
+    path: 'products/:id', component: DetailProductComponent
+   }
+  ,
   {
     path : 'blog',
     component: BlogComponent,

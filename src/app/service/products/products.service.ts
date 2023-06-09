@@ -9,7 +9,17 @@ import { IProduct } from 'src/app/interface/IProduct';
 export class ProductsService {
 
   constructor(private http: HttpClient) { }
-  getData(): Observable<IProduct[]>{
-    return this.http.get<IProduct[]>(`http://localhost:8080/api/products`)
+  getDatas(): Observable<IProduct[]>{
+    return this.http.get<IProduct[]>(`http://localhost:1337/products`)
   }
+
+  getData(id: string  | null): Observable<IProduct[]>{
+    return this.http.get<IProduct[]>(`http://localhost:1337/products/${id}`)
+  }
+
+  getLatestProducts(): Observable<IProduct[]> {
+    
+    return this.http.get<IProduct[]>(`http://localhost:1337/products?_sort=createdAt:desc&_limit=8`);
+  }
+  
 }

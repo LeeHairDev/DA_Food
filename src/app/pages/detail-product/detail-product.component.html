@@ -46,7 +46,7 @@
 			============================================= -->
 			<section id="product-1" class="pt-100 single-product division">
 				<div class="container">
-					<div class="row">
+					<div class="row" *ngIf="product">
 
 
 						<!-- PRODUCT IMAGE -->
@@ -75,31 +75,7 @@
 								</div>	<!-- END TABS CONTENT -->
 
 
-								<!-- TABS NAVIGATION -->
-								<div class="tabs-nav">
-								 	<div class="row">
-										<div class="col-lg-12 text-center">
-									 		<ul class="tabs-2 clearfix">
-
-									 			<!-- TAB-1 LINK -->
-												<li class="tab-link displayed" data-tab="tab-1-img">
-													<img src="../../../assets/images/menu/burger-06.png" alt="menu-image" />
-												</li>
-
-												<!-- TAB-2 LINK -->
-												<li class="tab-link" data-tab="tab-2-img">
-													<img src="../../../assets/images/menu/burger-04.png" alt="menu-image" />
-												</li>
-
-												<!-- TAB-2 LINK -->
-												<li class="tab-link" data-tab="tab-3-img">
-													<img src="../../../assets/images/menu/burger-07.png" alt="menu-image" />
-												</li> 
-
-											</ul>
-										</div>
-									</div>	
-							 	</div> <!-- END TABS NAVIGATION -->
+			
 
 
 							</div>
@@ -114,22 +90,12 @@
 								<div class="project-title">
 
 									<!-- Title -->
-									<h2 class="h2-lg">Smokey House</h2>
-
-									<!-- Rating -->
-									<div class="stars-rating">
-										<span>4.38</span>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star-half-alt"></i>
-										<span>(3 Customer Reviews)</span>
-									</div>		
+									<h2 class="h2-lg">{{product.name}}</h2>
+	
 
 									<!-- Price -->
 									<div class="project-price">
-										<h4 class="h4-xl yellow-color"><span class="old-price">$9.95</span> $8.60</h4>
+										<h4 class="h4-xl yellow-color">{{ product.price | currency:'VND':'symbol':'1.0-0' }}</h4>
 									</div>
 
 								</div>
@@ -137,31 +103,25 @@
 								<!-- TEXT -->
 								<div class="product-txt">
 
-									<!-- Text -->
-									<p class="p-md grey-color">Integer congue magna at pretium purus pretium ligula rutrum risus ultrice luctus
-									   ligula congue a vitae auctor sapien gravida enim ipsum congue morbi pretium
-									</p>
-
 									<!-- Product Data -->
 									<div class="product-info">
-										<p>Portion Size: <span>390g</span></p>
-										<p>Calories: <span>680Kj</span></p>
-										<p>Allergies: <span>Lactose, Gluten, Mustard</span></p>
-										<p>Tags: <span>Burgers, Fast Food, Testo</span></p>
+										<p>Kích Cỡ: <span>{{product.size}}</span></p>
+										<p>Calo: <span>{{product.calo}} kcal</span></p>
+										<p>Tags: <span>{{getCategoryNames()}}</span></p>
 									</div>
 
 									<input class="qty" type="number" min="1" max="20" value="1">
 
 									<!-- Add To Cart -->
 									<div class="add-to-cart-btn bg-yellow ico-20 text-center">
-										<a [routerLink]="['/cart']"><span class="flaticon-shopping-bag"></span> Add to Cart</a>
+										<a [routerLink]="['/cart']"><span class="flaticon-shopping-bag"></span>Thêm vào giỏ hàng</a>
 									</div>
 
 									<!-- List -->	
 									<ul class="txt-list">
-										<li class="list-item"><p class="p-sm">We accept credit cards or cash to a courier</p></li>
-										<li class="list-item"><p class="p-sm">Shipping cost is $2 (Free from $35)</p></li>
-										<li class="list-item"><p class="p-sm">Order before noon for same day dispatch</p></li>
+										<li class="list-item"><p class="p-sm">Chúng tôi chấp nhận thẻ tín dụng hoặc tiền mặt cho người chuyển phát nhanh</p></li>
+										<li class="list-item"><p class="p-sm">Chi phí vận chuyển là 30,000đ (Miễn phí từ 60,000đ)</p></li>
+										<li class="list-item"><p class="p-sm">Đặt hàng trước buổi trưa để giao hàng trong ngày</p></li>
 									</ul>
 
 								</div>	<!-- END TEXT-->
@@ -181,7 +141,7 @@
 			============================================= -->
 			<section id="product-1-data" class="wide-80 single-product-data division">
 				<div class="container">
-					<div class="row">
+					<div class="row" *ngIf="product">
 						<div class="col-md-12">
 							<div class="">
 
@@ -193,14 +153,10 @@
 									 		<ul class="tabs-1 clearfix">
 
 									 			<!-- TAB-1 LINK -->
-												<li class="tab-link current" data-tab="tab-1">
-													<h5 class="h5-sm">Description</h5>
+												<li class="tab-link current float-left" data-tab="tab-1">
+													<h5 class="h5-sm">Chi tiết</h5>
 												</li>
 
-												<!-- TAB-2 LINK -->
-												<li class="tab-link" data-tab="tab-2">
-													<h5 class="h5-sm">Reviews (3)</h5>
-												</li>
 
 											</ul>
 										</div>
@@ -216,31 +172,7 @@
 									<div id="tab-1" class="tab-content current">
 
 										<!-- Text -->
-										<p>Donec sodales, nibh vel tristique aliquet, nisi libero suscipit diam, sed tempus ante nulla ut purus. 
-										   Donec dolor magna aliquet suscipit in magna dignissim, porttitor hendrerit. Nunc gravida ultrices a felis eget faucibus. Praesent lorem purus, quis mollis nisi laoreet vitae consequat tortor
-										</p>
-
-										<!-- List -->	
-										<ul class="txt-list">
-
-											<li class="list-item">
-												<p><span class="txt-500">Quaerat sodales sapien undo euismod purus blandit velna</span> vitae auctor 
-												   a congue magna tempor sapien eget gravida laoreet turpis urna augue, viverra a augue eget, dictum tempor diam pulvinar consectetur purus efficitur ipsum primis in cubilia laoreet augue donec
-												</p>
-											</li>
-
-											<li class="list-item">
-												<p><span class="txt-500">Nemo ipsam egestas volute turpis dolores</span> ut aliquam quaerat sodales
-												   sapien congue augue egestas volutpat egestas magna suscipit egestas magna ipsum vitae purus 
-												   efficitur ipsum primis in cubilia undo pretium a purus pretium ligula
-												</p>
-											</li>
-
-										</ul>
-
-										<!-- Text -->
-										<p>Aliqum  mullam blandit tempor sapien gravida donec ipsum, at porta justo. Velna vitae auctor congue magna
-										   nihil impedit ligula risus. Mauris donec ociis et magnis sapien sagittis sapien sem congue tempor gravida donec enim ipsum porta justo integer odio velna a purus efficitur ipsum primis in cubilia laoreet augue egestas luctus donec purus and blandit sodales mpedit ligula risus. Mauris donec ociis et magnis sapien
+										<p>{{product.description}}
 										</p>
 
 									</div>	<!-- END TAB-1 CONTENT -->

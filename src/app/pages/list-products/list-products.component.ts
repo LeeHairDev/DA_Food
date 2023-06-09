@@ -11,15 +11,16 @@ export class ListProductsComponent {
   products: IProduct[] = [];
     constructor(private productService: ProductsService){}
   ngOnInit() : void{
-       this.productService.getData().subscribe((data)=>{       
-         this.products = data;   
+       this.productService.getDatas().subscribe((data)=>{       
+         this.products = data;
+         
        }, error => console.log(error.message)
       )
      
   }
   page: number = 1;
   count: number = 0;
-  tableSize: number = 2;
+  tableSize: number = 16;
   tableSizes: any = [3, 6, 9, 12];
 
   onTableDataChange(event: any) {

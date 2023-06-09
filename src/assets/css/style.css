@@ -6407,3 +6407,21 @@ nav a#pull {
 .s_1 img:hover {
   opacity: 0.8;
 }
+
+
+
+/* Css button current page */
+
+.ngx-pagination .current {
+  background-color: orange !important;
+  padding: 10px 17px !important;
+  border-radius: 50% !important;
+}
+
+
+/* Css button pre and next  */
+
+.pagination-previous:hover,.pagination-next:hover{
+  background-color: unset !important;
+  color: orange !important;
+}
