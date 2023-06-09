@@ -28,6 +28,8 @@ import { AddProductComponent } from './pages/admin/product/add-product/add-produ
 import { UpdateProductComponent } from './pages/admin/product/update-product/update-product.component';
 import { AddCategoryComponent } from './pages/admin/category/add-category/add-category.component';
 import { UpdateCategoryComponent } from './pages/admin/category/update-category/update-category.component';
+import { CartsAdminComponent } from './pages/admin/carts-admin/carts-admin.component';
+import { OrdersComponent } from './pages/admin/orders/orders.component';
 
 const routes : Routes = [
   {
@@ -105,7 +107,8 @@ const routes : Routes = [
     {path: 'categories/:id/update',component: UpdateCategoryComponent},
     {path: 'user',component: UsersComponent},
     {path: 'cmt',component:CommentsComponent},
-    {path: 'cart',component: CartComponent},
+    {path: 'cart',component: CartsAdminComponent},
+    {path: 'order',component: OrdersComponent},
     {
       path : '',
       redirectTo : '/admin',

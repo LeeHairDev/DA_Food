@@ -8,16 +8,15 @@
             
         </div><!--//row-->
        
-        <form>
+        <form [formGroup]="categoryForm" (ngSubmit)="onHandleSubmit()">
         
         <div class="form-group">
             <label for="exampleInputEmail1">Name Category</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="text" class="form-control"  formControlName="name">
+            <small id="emailHelp" class="form-text text-muted"></small>
         </div>
         
         <button type="submit" class="btn btn-warning text-light" style="margin-right: 30px;">Submit</button>
-        <button type="submit" class="btn btn-warning text-light">List</button>
         </form>
      
         

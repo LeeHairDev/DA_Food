@@ -3,22 +3,53 @@
         
         <div class="row g-3 mb-4 align-items-center justify-content-between">
             <div class="col-auto">
-                <h1 class="app-page-title mb-0">Update Products</h1>
+                <h1 class="app-page-title mb-0">Update products</h1>
             </div>
-            
         </div><!--//row-->
-       
-        <form>
+        <form [formGroup]="productForm" (ngSubmit)="onHandleSubmit()">
+        
+        <div class="form-group" >
+            <label for="exampleInputEmail1">Name products</label>
+            <input type="text" class="form-control" formControlName="name">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description products</label>
+            <input type="text" class="form-control" formControlName="description">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">image products</label>
+            <input type="text" class="form-control" formControlName="image">
             
-            <div class="form-group">
-                <label for="exampleInputEmail1">Name Category</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            
-            <button type="submit" class="btn btn-warning text-light" style="margin-right: 30px;">Submit</button>
-            <button type="submit" class="btn btn-warning text-light">List</button>
-            </form>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">price products</label>
+            <input type="number" class="form-control" formControlName="price">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">size products</label>
+            <input type="text" class="form-control" formControlName="size">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">calo products</label>
+            <input type="text" class="form-control" formControlName="calo">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <!-- <select class="form-select" aria-label="Default select example" formControlName="idCategory">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select> -->
+              
+        </div>
+        <button type="submit" class="btn btn-warning text-light" style="margin-right: 30px;">Submit</button>
+        
+        </form>
      
         
         

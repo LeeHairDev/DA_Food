@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -31,6 +32,9 @@ import { AddCategoryComponent } from './pages/admin/category/add-category/add-ca
 import { UpdateCategoryComponent } from './pages/admin/category/update-category/update-category.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CartsAdminComponent } from './pages/admin/carts-admin/carts-admin.component';
+import { OrdersComponent } from './pages/admin/orders/orders.component';
+
 
 
 @NgModule({
@@ -62,13 +66,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AddProductComponent,
     UpdateProductComponent,
     AddCategoryComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    CartsAdminComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
