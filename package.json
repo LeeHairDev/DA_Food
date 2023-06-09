@@ -21,8 +21,11 @@
     "antd": "^5.5.0",
     "bootstrap": "^5.2.3",
     "jquery": "^3.7.0",
+    "jwt-decode": "^3.1.2",
     "magnific-popup": "^1.1.0",
     "ngx-pagination": "^6.0.3",
+    "ngx-toastr": "^17.0.2",
+    "primeng": "^14.2.8-lts",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
